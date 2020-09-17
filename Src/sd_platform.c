@@ -542,7 +542,8 @@ enum sd_zynq_boot sd_boot_select(void)
 		case SD_BOOT_QSPI:
 			/* Buttons pressed to boot from QSPI flash */
 			if (sd_boot_timer_expired(tickstart, 2000))
-				return SD_ZYNQ_BOOT_QSPI;
+				return SD_ZYNQ_BOOT_SD;
+				//return SD_ZYNQ_BOOT_QSPI; //fantaske, orig
 			break;
 			
 		case SD_BOOT_JTAG:
@@ -553,12 +554,14 @@ enum sd_zynq_boot sd_boot_select(void)
 			
 		case SD_BOOT_DEFAULT:
 			/* Immediately boot normally from SD */
-			return SD_ZYNQ_BOOT_SD;
+			return SD_ZYNQ_BOOT_QSPI;
+			//return SD_ZYNQ_BOOT_SD; //orig
 		}
 		HAL_Delay(10);
 	}
 	/* Boot from SD card by default */
-	return SD_ZYNQ_BOOT_SD;
+	return SD_ZYNQ_BOOT_QSPI;
+	//return SD_ZYNQ_BOOT_SD; //orig
 }
 /**
  * SD_Platform
