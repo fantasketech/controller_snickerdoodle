@@ -131,7 +131,8 @@ static uint32_t led_rapid_pattern[] = {
  * @brief LED short blink pattern
  */
 static uint32_t led_short_blink_pattern[] = {
-1919, 1919, 1919, 1919, 1919, 1919, 1919, 1919, 1919, 0
+//1919, 1919, 1919, 1919, 1919, 1919, 1919, 1919, 1919, 0
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1919
 };
 
 

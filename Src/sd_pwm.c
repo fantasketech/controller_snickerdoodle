@@ -194,9 +194,9 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* htim_pwm)
 		GPIO_InitStruct.Alternate = GPIO_AF2_TIM1;
 		HAL_GPIO_Init(RED_GPIO_Port, &GPIO_InitStruct);
 
-		fault_led.tim = htim_pwm;
-		fault_led.chan = TIM_CHANNEL_1;
-		fault_led.cfg = &fault_cfg;
+		app_led.tim = htim_pwm;
+		app_led.chan = TIM_CHANNEL_1;
+		app_led.cfg = &app_cfg;
 
 	} else if (htim_pwm->Instance==TIM3) {
 		/* Peripheral clock enable */
@@ -231,9 +231,9 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* htim_pwm)
 		bluetooth_led.chan = TIM_CHANNEL_2;
 		bluetooth_led.cfg = &bluetooth_cfg;
 
-		app_led.tim = htim_pwm;
-		app_led.chan = TIM_CHANNEL_3;
-		app_led.cfg = &app_cfg;
+		fault_led.tim = htim_pwm;
+		fault_led.chan = TIM_CHANNEL_3;
+		fault_led.cfg = &fault_cfg;
 
 		wireless_led.tim = htim_pwm;
 		wireless_led.chan = TIM_CHANNEL_4;

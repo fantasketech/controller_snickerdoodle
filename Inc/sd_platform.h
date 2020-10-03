@@ -59,7 +59,7 @@ extern "C" {
  * @defgroup SD_Platform_Defines Platform Definitions
  * @{
  */
-#define CONS_UART_RX_BUFF_SIZE  128		/**< Console buffer size */
+#define CONS_UART_RX_BUFF_SIZE  512		/**< Console buffer size */
 
   
 /**
